@@ -1,4 +1,6 @@
 import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect(('google.com', 0)) #you can change this website! default is google but cnn is recommended because it changes all the time!
-print "Your IP is: "+s.getsockname()[0]
+
+sockfd = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sockfd.connect(('255.255.255.0', 0))  
+print("Your LAN IP address is %s" % sockfd.getsockname()[0])
+sockfd.close()
